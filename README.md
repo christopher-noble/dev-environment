@@ -1,0 +1,87 @@
+## dev-environment
+
+Local development dependencies (Docker Compose).
+
+## Local Development Setup
+
+Follow these steps to set up your local development environment:
+
+1. **Navigate to dev-environment directory (this service)**
+   ```bash
+   cd dev-environment
+   ```
+
+2. **Start the development dependencies**
+   ```bash
+   docker-compose up
+   ```
+
+3. **Navigate to your service directory**
+   ```bash
+   cd ../your-service-name
+   ```
+
+4. **Start your service**
+   ```bash
+   pnpm run start
+   ```
+
+5. **Everything should work!**
+
+The Docker Compose setup provides shared development dependencies (like Postgres) that your services can connect to.
+
+### Start Postgres
+
+From this folder:
+
+```bash
+# Docker Compose v2 (Docker Desktop)
+docker compose up
+
+# Docker Compose v1
+docker-compose up
+```
+
+Or in the background:
+
+```bash
+# Docker Compose v2 (Docker Desktop)
+docker compose up -d
+
+# Docker Compose v1
+docker-compose up -d
+```
+
+### Connection details (defaults)
+
+- Host: `localhost`
+- Port: `5432`
+- User: `postgres`
+- Password: `postgres`
+
+**Note:** This is a shared Postgres server. Each service should connect to this server and create its own database (e.g., `user_service_development`, `meals_service_development`).
+
+Connection string template:
+
+`postgres://postgres:postgres@localhost:5432/<your_service_database>`
+
+### Stop / reset
+
+```bash
+# Docker Compose v2 (Docker Desktop)
+docker compose down
+
+# Docker Compose v1
+docker-compose down
+```
+
+Delete data volume too:
+
+```bash
+# Docker Compose v2 (Docker Desktop)
+docker compose down -v
+
+# Docker Compose v1
+docker-compose down -v
+```
+
