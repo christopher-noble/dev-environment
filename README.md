@@ -1,10 +1,10 @@
-## dev-environment
+## Dishlist - Development Environment
 
-Local development dependencies (Docker Compose).
+Local development dependencies for the Dishlist app (Docker Compose).
 
 ## Local Development Setup
 
-Follow these steps to set up your local development environment:
+Follow these steps to set up your local Dishlist development environment:
 
 1. **Navigate to dev-environment directory (this service)**
    ```bash
@@ -16,9 +16,9 @@ Follow these steps to set up your local development environment:
    docker-compose up
    ```
 
-3. **Navigate to your service directory**
+3. **Navigate to your Dishlist service directory**
    ```bash
-   cd ../your-service-name
+   cd ../your-dishlist-service
    ```
 
 4. **Start your service**
@@ -28,7 +28,7 @@ Follow these steps to set up your local development environment:
 
 5. **Everything should work!**
 
-The Docker Compose setup provides shared development dependencies (like Postgres) that your services can connect to.
+The Docker Compose setup provides shared development dependencies (like Postgres) that your Dishlist services can connect to.
 
 ### Start Postgres
 
@@ -59,11 +59,11 @@ docker-compose up -d
 - User: `postgres`
 - Password: `postgres`
 
-**Note:** This is a shared Postgres server. Each service should connect to this server and create its own database (e.g., `user_service_development`, `meals_service_development`).
+**Note:** This is a shared Postgres server. Each Dishlist service should connect to this server and create its own database (e.g., `dishlist_api_development`, `dishlist_auth_development`).
 
 Connection string template:
 
-`postgres://postgres:postgres@localhost:5432/<your_service_database>`
+`postgres://postgres:postgres@localhost:5432/<your_dishlist_service_database>`
 
 ### Stop / reset
 
