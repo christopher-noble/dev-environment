@@ -6,29 +6,39 @@ Local development dependencies for the Dishlist app (Docker Compose).
 
 Follow these steps to set up your local Dishlist development environment:
 
-1. **Navigate to dev-environment directory (this service)**
+1. **Make sure colima is running**
+
+   ```bash
+   colima start
+   ```
+
+2. **Navigate to dev-environment directory (this service)**
+
    ```bash
    cd dev-environment
    ```
 
-2. **Start the development dependencies**
+3. **Start the development dependencies**
+
    ```bash
    docker-compose up
    ```
 
-3. **Navigate to your Dishlist service directory**
+4. **Navigate to your Dishlist service directory**
+
    ```bash
    cd ../your-dishlist-service
    ```
 
-4. **Start your service**
+5. **Start your service**
+
    ```bash
    pnpm run start
    ```
 
-5. **Everything should work!**
+6. **Everything should work!**
 
-The Docker Compose setup provides shared development dependencies (like Postgres) that your Dishlist services can connect to.
+The Docker Compose setup provides shared development dependencies (like Postgres) that Dishlist services can connect to.
 
 ### Start Postgres
 
@@ -84,4 +94,3 @@ docker compose down -v
 # Docker Compose v1
 docker-compose down -v
 ```
-
